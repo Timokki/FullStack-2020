@@ -8,6 +8,8 @@ const App = () => {
   const [neutral, setNeutral] = useState(0)
   const [bad, setBad] = useState(0)
 
+  console.log('Tehtävä 1.6 Unicafe-step1 suorituksessa')
+
   return (
     <div>
       <Header headerProp={mainHeader} />
