@@ -27,7 +27,7 @@ const App = () => {
   return (
     <div>
       <Header headerProp={mainHeader} />
-      <button onClick={handleBadClick}> Bad</button>
+      <button onClick={handleBadClick}>Bad</button>
       <button onClick={handleNeutralClick}>Neutral</button>
       <button onClick={handleGoodClick}>Good</button>
       <Header headerProp='statistics' />
