@@ -50,7 +50,7 @@ const Stat = (props) =>{
       bad {props.bad} <br/>
       all {total} <br/>
       average {(props.good - props.bad) / total} <br/>
-      positive {props.good / total}</p>
+      positive {props.good / total} %</p>
     </div>
 
   )
