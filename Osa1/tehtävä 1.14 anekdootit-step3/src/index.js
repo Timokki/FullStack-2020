@@ -14,8 +14,24 @@ const App = (props) => {
   const handleClickVote = () => {
     votes[selected] += 1
     setVote(votes.slice()) //Päivitys ei toimi jos setVote saa parametriksi uutta taulukkoa.
-    console.log('votes[', selected, ']:' , votes[selected])
+    console.log('Äänestetty votes[', selected, ']:' , votes[selected])
+    setMostVotedAnecdote() 
   }
+
+  const setMostVotedAnecdote = () =>
+{
+  console.log('senMostVotedAnectode funktiossa')
+  let isVoted = mostVoted
+  for(let i=0; votes.length > i; i++) {
+    console.log('for-silmukka votes[i]:', votes[i], ' votes[mostVoted]:', votes[mostVoted], 'votes.length:', votes.length)
+    if (isVoted ===-1 || votes[i] > votes[mostVoted])
+    {
+      isVoted = 1
+      console.log('setMostVoted ', i) 
+      setMostVoted(i)
+    }
+  }
+}
 
   return (
     <div>
@@ -24,9 +40,25 @@ const App = (props) => {
       has {votes[selected]} votes <br/>
       <button onClick={handleClickVote}>vote</button>
       <button onClick={handleClick}>next anecdote</button>
-      <h1>Anecdote with most votes</h1>
-      {props.anecdotes[mostVoted]}<br/>
+      <ShowMostVotedAnecdote anecdotes={props.anecdotes} mostVotedIndex={mostVoted} votes={votes}> </ShowMostVotedAnecdote>
     </div>
+  )
+}
+
+const ShowMostVotedAnecdote = (props) => {
+  console.log('ShowMOstVotedAnecdote mostVotedIndex: ', props.mostVotedIndex)
+  if (props.mostVotedIndex < 0)
+  {
+    return ''
+  }
+  console.log('Mitä vittua? ', props.mostVotedIndex)
+  return(
+    <>
+      <h1>Anecdote with most votes</h1>
+      <p>{props.anecdotes[props.mostVotedIndex]}<br/>
+      has {props.votes[props.mostVotedIndex]} votes.
+      </p>
+    </>
   )
 }
 
