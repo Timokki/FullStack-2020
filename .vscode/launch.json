@@ -8,17 +8,14 @@
             "name": "Launch via NPM",
             "request": "launch",
             "runtimeArgs": [
+                "run",
                 "run-script",
                 "debug"
             ],
             "runtimeExecutable": "npm",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "type": "pwa-node"
-        }
-
-
-        
+            "type": "pwa-chrome",
+            "cwd": "~/Coding/Helsingin yliopisto/FullStack 2020/FullStack-2020/Osa1/tehtävä 1.14 anekdootit-step3/",
+            //"program": "${workspaceFolder}/index.js"
+        }  
     ]
 }
