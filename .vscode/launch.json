@@ -5,17 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch via NPM",
+            "type": "firefox",
             "request": "launch",
-            "runtimeArgs": [
-                "run",
-                "run-script",
-                "debug"
-            ],
-            "runtimeExecutable": "npm",
-            "type": "pwa-chrome",
-            "cwd": "~/Coding/Helsingin yliopisto/FullStack 2020/FullStack-2020/Osa1/tehtävä 1.14 anekdootit-step3/",
-            //"program": "${workspaceFolder}/index.js"
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}"
         }  
     ]
 }
