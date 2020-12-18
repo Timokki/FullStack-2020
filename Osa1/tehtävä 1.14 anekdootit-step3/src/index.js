@@ -36,6 +36,7 @@ const App = (props) => {
   return (
     <div>
       {console.log('App updated')}
+      <h1>Anecdote of the day</h1>
       {props.anecdotes[selected]}<br/>
       has {votes[selected]} votes <br/>
       <button onClick={handleClickVote}>vote</button>
@@ -51,7 +52,6 @@ const ShowMostVotedAnecdote = (props) => {
   {
     return ''
   }
-  console.log('Mitä vittua? ', props.mostVotedIndex)
   return(
     <>
       <h1>Anecdote with most votes</h1>
