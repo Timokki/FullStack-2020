@@ -11,16 +11,15 @@ const Course = (props) =>
     console.log('Course props:', props.course.name)
     const {name, id, parts} = props.course
     //Destrukturointi 1.
-    //const name = course.name
-    //const id = course.id
-    //const parts = course.parts
+    //const name = props.course.name
+    //const id = props.course.id
+    //const parts = props.course.parts
 
     console.log('Course name:', name)
 
     //Destrukturointi 2.
     //const {name, id, parts} = props
 
-    //{parts.map(part => {part.name})}
    return (
        <div>
            <h1 key={id}>{name}</h1>
