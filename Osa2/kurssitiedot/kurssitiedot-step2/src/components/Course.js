@@ -1,29 +1,21 @@
 import React from 'react'
 
-//Komponentin esittely joka tarvitaan destrukturointi esimerkki ykköseen ja kakkoseen 
-//const Course = (props) =>
-
-//const Course = ({name, id, parts}) =>
-
-//const Course = ({name, id, parts}) =>
 const Course = (props) =>
 {
-    console.log('Course props:', props.course.name)
     const {name, id, parts} = props.course
-    //Destrukturointi 1.
-    //const name = props.course.name
-    //const id = props.course.id
-    //const parts = props.course.parts
 
-    console.log('Course name:', name)
+    const allExercises = parts.map(part => part.exercises)
+    let total = 0
 
-    //Destrukturointi 2.
-    //const {name, id, parts} = props
+    allExercises.forEach(element => {
+      total += element  
+    });
 
    return (
        <div>
            <h1 key={id}>{name}</h1>
             {parts.map(part => <p key={part.id}>{part.name} {part.exercises}</p>)}
+            <p>Total of {total} exercises</p>
        </div>
    )
 }
