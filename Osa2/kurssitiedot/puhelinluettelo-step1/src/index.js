@@ -1,7 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Course from './components/Course'
 
 const App = () => {
+
+  // Kommenteissa on kirjoittamiani muistiinpanoja, eikä tavanomaisia kommentteja
   const course = {
     name: 'Half Stack application development',
     id: 1,
@@ -24,6 +27,9 @@ const App = () => {
     ]
   }
 
+  console.log(course)
+
+  // Course komponentti saa course nimisen propsin arvoksi olion course
   return (
     <div>
       <Course course={course} />
