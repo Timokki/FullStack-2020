@@ -15,7 +15,7 @@ const Course = (props) =>
        <div>
            <h1 key={id}>{name}</h1>
             {parts.map(part => <p key={part.id}>{part.name} {part.exercises}</p>)}
-            <p>Total of {total} exercises</p>
+            <h4>Total of {total} exercises</h4>
        </div>
    )
 }
