@@ -8,8 +8,8 @@ const Course = (props) =>
   // <CourseElements course = {props.courses[0]} />
 
    return (
-      <div key={props.id}>
-        {props.courses.map(courses => < CourseElements course = {courses} /> )}
+      <div>
+        {props.courses.map(courses => < CourseElements key={props.id} course = {courses} /> )}
       </div>
    )
 }
@@ -22,11 +22,11 @@ const CourseElements = (props) =>
   const totalAmount = parts.reduce((sum, part) => sum + part.exercises, 0)
 
   return (
-    <>
-      <h2 key={id}>{name}</h2>
-      {parts.map(part => <p key={part.id}>{part.name} {part.exercises}</p>)}
-      <h4 key={8}>Total of {totalAmount} exercises</h4>
-    </>
+    <div key={id}>
+      <h2> {name}</h2>
+      {parts.map(part => <div key={part.id}>{part.name} {part.exercises}</div>)}
+      <h4>Total of {totalAmount} exercises</h4>
+    </div>
   )
 }
 
