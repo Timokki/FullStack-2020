@@ -19,7 +19,7 @@ const App = () => {
     const personObject = {
       name: newName
     }
-
+    console.log('setPerson name: ', newName)
     setPersons(persons.concat(personObject))
     setNewName('')
   }
@@ -36,7 +36,7 @@ const App = () => {
         </div>
       </form>
       <h2>Numbers</h2>
-      ...
+      {persons.map(person => <p key={person.name}> {person.name} </p>)}
     </div>
   )
 
