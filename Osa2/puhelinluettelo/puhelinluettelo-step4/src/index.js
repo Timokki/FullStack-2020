@@ -50,7 +50,8 @@ const App = () => {
 
   const isNameInArray = (person) => person.name !== newName;
 
-  let filteredPersons = persons.filter(person => person.name.includes(newFilter))
+  //console.log('newFilter.toLowerCase: ', newFilter.toLowerCase() )
+  let filteredPersons = persons.filter(person => person.name.toLowerCase().includes(newFilter.toLowerCase()))
 
   return (
     <div>
