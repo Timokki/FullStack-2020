@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 const App = () => {
   const [ persons, setPersons] = useState([
     { name: 'Arto Hellas',
-      phoneNr: '044 555 7878' 
+      number: '044 555 7878' 
     }
   ]) 
   const [ newName, setNewName ] = useState('')
@@ -28,7 +28,7 @@ const App = () => {
     {
       const personObject = {
         name: newName,
-        phoneNr: newNumber
+        number: newNumber
       }
       //console.log('setPerson name: ', newName)
       setPersons(persons.concat(personObject))
@@ -56,7 +56,7 @@ const App = () => {
         </div>
       </form>
       <h2>Numbers</h2>
-      {persons.map(person => <p key={person.name}> {person.name} {person.phoneNr} </p>)}
+      {persons.map(person => <p key={person.name}> {person.name} {person.number} </p>)}
     </div>
   )
 

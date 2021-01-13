@@ -49,7 +49,7 @@ const App = () => {
         number: newNumber
       }
       //console.log('setPerson name: ', newName)
-      //setPersons(notes.persons.concat(personObject))
+      //setPersons(persons.concat(personObject))
       setNewName('')
       setNewNumber('')
     }

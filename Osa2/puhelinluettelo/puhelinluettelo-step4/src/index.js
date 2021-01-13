@@ -37,7 +37,7 @@ const App = () => {
     {
       const personObject = {
         name: newName,
-        phoneNr: newNumber
+        number: newNumber
       }
       //console.log('setPerson name: ', newName)
       setPersons(persons.concat(personObject))
@@ -72,7 +72,7 @@ const App = () => {
         </div>
       </form>
       <h2>Numbers</h2>
-      {filteredPersons.map(person => <p key={person.name}> {person.name} {person.phoneNr} </p>)}
+      {filteredPersons.map(person => <p key={person.name}> {person.name} {person.number} </p>)}
     </div>
   )
 
