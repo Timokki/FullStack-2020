@@ -5,7 +5,6 @@ const Showcountries = (props) =>
     console.log('Showcountries: ', props.countries)
 
     let filteredCountries = props.countries.filter(country => country.name.toLowerCase().includes(props.newFilter.toLowerCase()))
-    //let filteredCountries = props.countries.filter(country => country.name.includes(props.newFilter))
 
     if (filteredCountries.length > 10)
     {
