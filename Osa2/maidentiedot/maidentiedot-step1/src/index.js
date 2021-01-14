@@ -9,7 +9,7 @@ const App = () => {
   const [newFilter, setNewFilter] = useState('')
 
   const handleFilterChange = (event) => {
-    //console.log(event.target.value)
+    console.log(event.target.value)
     setNewFilter(event.target.value)
   }
 
@@ -52,7 +52,7 @@ useEffect(() => {
   return (
     <div>
       <Filter newFilter={newFilter} handleFilterChange={handleFilterChange} />
-      <ShowCountries filter={newFilter} countries={countries}/>
+      <ShowCountries countries={countries} newFilter={newFilter}/>
     </div>
   )
 
