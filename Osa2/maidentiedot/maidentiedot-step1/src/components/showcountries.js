@@ -19,12 +19,25 @@ const Showcountries = (props) =>
         )
     }
 
-    return(
-        <>
-        {filteredCountries.map(country => <div key={country.alpha3Code}> {country.name} </div>)}
-        </>
-    )
-    
+    let selectedCountry = filteredCountries[0]
+
+    if (selectedCountry != null)
+    {
+        return(
+            <>
+            <h1>{selectedCountry.name}</h1>
+            <div>{selectedCountry.capital}</div>
+            <div>Population: {selectedCountry.population}</div>
+            <h2>Languages</h2>
+            <ul>
+                {selectedCountry.languages.map(language => <li key={language.name}> {language.name} </li>)}
+            </ul>
+                <img src={selectedCountry.flag} alt="Flag of country" width="15%" height="10%"></img>
+            </>
+        )
+    }
+
+    return ''
     
 }
 
