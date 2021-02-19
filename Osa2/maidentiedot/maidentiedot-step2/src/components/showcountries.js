@@ -16,10 +16,10 @@ const Showcountries = (props) =>
     let filteredCountries = props.countries.filter(country => country.name.toLowerCase().includes(props.newFilter.toLowerCase()))
 
     //showContry metodin pitää saada country parametri
-    const showCountry = (event, country) => {
+    const showCountry = (country) => {
         //event.preventDefault()
-        console.log('button clicked')
-        //props.SetNewFilter(country)
+        //console.log('button clicked, ',event, country)
+        props.setNewFilter(country)
       }
 
     if (filteredCountries.length > 10)
@@ -30,12 +30,16 @@ const Showcountries = (props) =>
     {
         console.log('button data: ', filteredCountries)
         //<Button handleClick={showCountry} text="show" country={filteredCountries.map(country => country.name)}/>
+        
+        //<button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button> 
+        //<button onClick={this.deleteRow.bind(this, id)}>Delete Row</button>
 
         //Buttonin click-eventin käsittelijän pitää tietää mikä maa kytketään nappiin.
+
         return (
             <>
             {filteredCountries.map(country => <div key={country.alpha3Code}> {country.name}
-                <Button handleClick={showCountry} text="show" country={country.name} />
+                <Button handleClick={() => showCountry(country.name)} text="show" />
             </div>)}
             </>
         )
