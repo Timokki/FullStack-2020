@@ -5,15 +5,20 @@ const baseUrl = 'http://localhost:3001/persons'
 // Noutaa koko tietokannan
 const getAll = () => {
   console.log("Get All")
+  // axios.get palauttaa promisen (request), se edustaa asynkronista operaatiota ja voi olla kolmessa eri tilassa.
   const request = axios.get(baseUrl)
+  // Ei palauteta promisea request. Vaan 
   return request.then(response => response.data)
 }
 
 // Luo koko tietokannan 
-const create = (newObject) => {
+const create = newObject => {
   console.log("Create new db record ", newObject)
-  const request = axios.post(baseUrl, newObject)
-  return request.then(response => response.data)
+  // Promise-oliota ei ole yleensä tarvetta tallettaa muuttujaan, 
+  // ja onkin tapana ketjuttaa metodin then kutsu suoraan axiosin metodin kutsun perään:
+  //const request = axios.post(baseUrl, newObject)
+  return axios.post(baseUrl, newObject).then(response =>  response.data)
+  //return request.then(response =>  response.data)
 }
 
 // Päivittää olemassa olevan tietueen
