@@ -6,5 +6,5 @@ node_modules
 /Backend
 /.pnp
 .pnp.js
-
+.DS_Store
 /harjoitukset
