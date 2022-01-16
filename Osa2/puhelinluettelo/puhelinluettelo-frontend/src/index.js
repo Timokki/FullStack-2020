@@ -84,6 +84,11 @@ const App = () => {
 
           setNotificationMessage({message: `Uusi tietue ${returnedPersons.name} lisätty`, isError: false})
           setEmptyNotication(5000)
+      }).catch(error => {
+        // pääset käsiksi palvelimen palauttamaan virheilmoitusolioon näin
+        console.log(error.response.data)
+        setNotificationMessage({message: error.response.data.error, isError: true})
+        setEmptyNotication(5000)
       })
     }
     else //if (persons.find(person => person.name === newName))
